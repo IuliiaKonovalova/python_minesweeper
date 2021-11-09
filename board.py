@@ -9,13 +9,19 @@ class Board:
         self.dug = set()
 
     def make_new_board(self):
+        # Create a board
         board = [[None for _ in range(self.dim_size)] for _ in range(self.dim_size)]
         bomb_planted = 0
+        # Add bombs to the board
         while bomb_planted < self.num_bombs:
+            # Get a random location for a bomb
             location = random.randit(0, self.dim_size**2 - 1)
+            # Find the row and the column of the location
             row = location // self.dim_size
             column = location % self.dim_size
-
+            # Check whether the space is still empty,
+            # if it is not, do nothing
+            # if it is empty, place the bomb and increase number of bombs
             if board[row][column] == '*':
                 continue
             board[row][column] = '*'
