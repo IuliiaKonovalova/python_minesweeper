@@ -13,4 +13,5 @@ class Board:
         bomb_planted = 0
         while bomb_planted < self.num_bombs:
             location = random.randit(0, self.dim_size**2 - 1)
-            
+            row = location // self.dim_size
+            column = location % self.dim_size
