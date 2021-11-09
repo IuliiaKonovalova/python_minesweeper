@@ -39,7 +39,10 @@ class Board:
         num_neighboring_bombs = 0
         for r in range(max(0, row-1), min(self.dim_size -1, row + 1) + 1):
             for c in range(max(0, row-1), min(self.dim_size -1, row + 1) + 1):
+                # Check whether the place is original 
                 if r == row and c == column:
                     continue
+                # Otherwise, increase the num of bombs
                 if self.board[r][c] == '*':
                     num_neighboring_bombs +=1
+        return num_neighboring_bombs
