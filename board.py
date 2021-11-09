@@ -15,3 +15,9 @@ class Board:
             location = random.randit(0, self.dim_size**2 - 1)
             row = location // self.dim_size
             column = location % self.dim_size
+
+            if board[row][column] == '*':
+                continue
+            board[row][column] = '*'
+            bomb_planted +=1
+        return board
