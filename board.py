@@ -12,4 +12,5 @@ class Board:
         board = [[None for _ in range(self.dim_size)] for _ in range(self.dim_size)]
         bomb_planted = 0
         while bomb_planted < self.num_bombs:
-            loc = random.randit(0)
+            location = random.randit(0, self.dim_size**2 - 1)
+            
